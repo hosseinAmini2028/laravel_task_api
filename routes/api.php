@@ -22,7 +22,6 @@ Route::prefix('auth')->group(function () {
     Route::delete('logout', [Authcontroller::class, 'logout'])->middleware(['auth']);
 });
 
-Route::post('usertasks/{id}', [UserTaskController::class, 'update']);
 
 Route::prefix('tasks')->middleware(['auth'])->group(function () {
     Route::get('/', [TaskController::class, 'index']);
